@@ -1,0 +1,1041 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97C41FEE-6BC6-46BF-A34F-B89B70B5FC96}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DSCMS</RootNamespace>
+    <AssemblyName>DSCMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30930.28736, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Ajax\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="DCISDBManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DB\DCISDBManager.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip">
+      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="EAGetMail40, Version=4.6.0.6, Culture=neutral, PublicKeyToken=e10a0812eb29cf94, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DB\EAGetMail40.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.4.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Ajax\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Ajax, Version=3.0.31106.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Ajax\System.Web.Ajax.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ajax\AjaxControlToolkit.dll" />
+    <Content Include="Ajax\AjaxControlToolkit.pdb" />
+    <Content Include="Ajax\itextsharp.dll" />
+    <Content Include="Ajax\System.Web.Ajax.dll" />
+    <Content Include="Ajax\System.Web.Ajax.pdb" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\Datedisable.css" />
+    <Content Include="css\logo-nav.css" />
+    <Content Include="css\notification.css" />
+    <Content Include="css\select2.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="img\colorchang.gif" />
+    <Content Include="img\extraslow.gif" />
+    <Content Include="img\giphy.gif" />
+    <Content Include="img\red.gif" />
+    <Content Include="img\redslow.gif" />
+    <Content Include="img\SEAL.jpg" />
+    <Content Include="img\CerGlobe.png" />
+    <Content Include="img\CertificICO.png" />
+    <Content Include="img\CustomerICO.png" />
+    <Content Include="img\DocumentICO.png" />
+    <Content Include="img\DownloadICO.png" />
+    <Content Include="img\NCE_CO_Format_Column_with_HS_code.PNG" />
+    <Content Include="img\NCE_CO_Format_For_Nidro.PNG" />
+    <Content Include="img\NCE_Digital_CO_form_for_MASS_Active.PNG" />
+    <Content Include="img\NCE_Digital_CO_for_Orient_Global.PNG" />
+    <Content Include="img\NCE_Home_logo.png" />
+    <Content Include="img\nce_new_logo.png" />
+    <Content Include="img\nce_new_logo_icon.png" />
+    <Content Include="img\Row_without_HS.PNG" />
+    <Content Include="img\SignatureICO.png" />
+    <Content Include="img\NCE_new.png" />
+    <Content Include="img\vslow.gif" />
+    <Content Include="img\watermark.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Extension.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\notifi.js" />
+    <Content Include="js\select2.full.js" />
+    <Content Include="Views\Certificate\CancelledCertificate.aspx" />
+    <Content Include="Views\Certificate\certdetails.aspx" />
+    <Content Include="Views\Certificate\CertifcateDownload.aspx" />
+    <Content Include="Views\Certificate\CertificateDetails.aspx" />
+    <Content Include="Views\Certificate\CertificateRequest.aspx" />
+    <Content Include="Views\Certificate\CertificateUpload.aspx" />
+    <Content Include="Views\Certificate\CertuificateDuplication.aspx" />
+    <Content Include="Views\Certificate\CoStatus.aspx" />
+    <Content Include="Views\Certificate\ECertificateRequests.aspx" />
+    <Content Include="Views\Certificate\EditCertificateRequest.aspx" />
+    <Content Include="Views\Certificate\EditManualEntry.aspx" />
+    <Content Include="Views\Certificate\IssueCertificasteDetails.aspx" />
+    <Content Include="Views\Certificate\ManualCert.aspx" />
+    <Content Include="Views\Certificate\ManualEntry.aspx" />
+    <Content Include="Views\Certificate\PdfView.aspx" />
+    <Content Include="Views\Certificate\PendingCertificateRequest.aspx" />
+    <Content Include="Views\Certificate\PendingCertificates.aspx" />
+    <Content Include="Views\Certificate\UploadBCertificateRequests.aspx" />
+    <Content Include="Views\Contact\MessageList.aspx" />
+    <Content Include="Views\Customer\AdminEditCustomer.aspx" />
+    <Content Include="Views\Customer\AdminEditUser.aspx" />
+    <Content Include="Views\Customer\Approval.aspx" />
+    <Content Include="Views\Customer\CustomerEditList.aspx" />
+    <Content Include="Views\Customer\CustomerFinanceData.aspx" />
+    <Content Include="Views\Customer\CustomerRegistration.aspx" />
+    <Content Include="Views\Customer\CustomerRequestDetails.aspx" />
+    <Content Include="Views\Customer\CustomerTaxAssign.aspx" />
+    <Content Include="Views\Customer\LetterUploadForm.aspx" />
+    <Content Include="Views\Customer\SelectTemplate.aspx" />
+    <Content Include="Views\Customer\TaxRegistration.aspx" />
+    <Content Include="Views\Customer\ViewCustomerDetails.aspx" />
+    <Content Include="Views\Customer\ViewUploadForm.aspx" />
+    <Content Include="Views\Home\Dashboard.aspx" />
+    <Content Include="Views\Home\EnterEmailAdress.aspx" />
+    <Content Include="Views\Home\FileNotFound.aspx" />
+    <Content Include="Views\Home\Login.aspx" />
+    <Content Include="Views\Home\TemplateDownload.aspx" />
+    <Content Include="Views\Home\UserLogin.aspx" />
+    <Content Include="Views\Invoice\BillPrints.aspx" />
+    <Content Include="Views\Invoice\InvoiceGenarator.aspx" />
+    <Content Include="Views\Invoice\InvoiceReportDetail.aspx" />
+    <Content Include="Views\Invoice\MonthlyAllInvoice.aspx" />
+    <Content Include="Views\Invoice\MonthlyInvoiceBill.aspx" />
+    <Content Include="Views\Invoice\MonthlyInvoiceReport.aspx" />
+    <Content Include="Views\Maintenance\CertificateReminders.aspx" />
+    <Content Include="fonts\css\font-awesome.css" />
+    <Content Include="fonts\css\font-awesome.min.css" />
+    <Content Include="fonts\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="img\CEO_Logo.png" />
+    <Content Include="img\NCELOGO.PNG" />
+    <Content Include="js\pdf1.js" />
+    <Content Include="js\pdf2.js" />
+    <Content Include="js\pdf3.js" />
+    <Content Include="js\pdf4.js" />
+    <Content Include="Signature\Samitha\sign.JPG" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\form-elements.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Views\Certificate\SetCertificate.aspx" />
+    <Content Include="Views\Home\Forbidden.aspx" />
+    <Content Include="img\300.png" />
+    <Content Include="js\scripts.js" />
+    <Content Include="js\tablesearch.js" />
+    <Content Include="Views\Home\Logout.aspx" />
+    <Content Include="Views\Maintenance\CertificateStatus.aspx" />
+    <Content Include="Views\Maintenance\Consignee.aspx" />
+    <Content Include="Views\Maintenance\Consignor.aspx" />
+    <Content Include="Views\Maintenance\CustomerRequestStatsusDetails.aspx" />
+    <Content Include="Views\Maintenance\CustomerRequestStatus.aspx" />
+    <Content Include="Views\Maintenance\EBCConfig.aspx" />
+    <Content Include="Views\Maintenance\EditNCEContactPersonName.aspx" />
+    <Content Include="Views\Maintenance\ExportSector.aspx" />
+    <Content Include="Views\Maintenance\OwnerDetailentry.aspx" />
+    <Content Include="Views\Maintenance\PackageType.aspx" />
+    <Content Include="Views\Maintenance\RejectReasons.aspx" />
+    <Content Include="Views\Maintenance\SignatureLevel.aspx" />
+    <Content Include="Views\Maintenance\SupportingDocumentDownload.aspx" />
+    <Content Include="Views\Maintenance\SupportingDocuments.aspx" />
+    <Content Include="Views\Maintenance\SupportingDocumentSign.aspx" />
+    <Content Include="Views\Maintenance\TemplateSupportingDocument.aspx" />
+    <Content Include="Views\Maintenance\UserEmailChange.aspx" />
+    <Content Include="Views\Parameter\AdminEmailDetail.aspx" />
+    <Content Include="Views\Report\CORegistryReport.aspx" />
+    <Content Include="Views\Report\CoStatistic.aspx" />
+    <Content Include="Views\Report\CustomerStatementReport.aspx" />
+    <Content Include="Views\Report\CustomTransacDetailRprt.aspx" />
+    <Content Include="Views\Report\Reports.aspx" />
+    <Content Include="Views\Report\SalesbyCustomer.aspx" />
+    <Content Include="Views\Report\SalesByItemSummaryMNRprt.aspx" />
+    <Content Include="Views\Report\Tax.aspx" />
+    <Content Include="Views\Maintenance\UnitChargeMaintenance.aspx" />
+    <Content Include="Views\Maintenance\UploadTemplate.aspx" />
+    <Content Include="Views\Maintenance\UserEmail.aspx" />
+    <Content Include="Views\Report\WeeklySummaryRprt.aspx" />
+    <Content Include="Views\SupportingDoc\PdfView.aspx" />
+    <Content Include="Views\SupportingDoc\SDApproval.aspx" />
+    <Content Include="Views\SupportingDoc\SDocApproveRequest.aspx" />
+    <Content Include="Views\User\AddUser.aspx" />
+    <Content Include="Views\User\EditCUser.aspx" />
+    <Content Include="Views\User\EditUser.aspx" />
+    <Content Include="Views\User\PasswordChangeemail.aspx" />
+    <Content Include="Views\User\Profile.aspx" />
+    <Content Include="Views\User\ProfileChange.aspx" />
+    <Content Include="Views\User\SignatureUpload.aspx" />
+    <Content Include="Views\User\UserCategory.aspx" />
+    <Content Include="Views\User\UserGroup.aspx" />
+    <Content Include="Views\User\UserRequest.aspx" />
+    <Content Include="Views\User\UserRequestApproval.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PDFCreator\CertificateCreate.cs" />
+    <Compile Include="PDFCreator\ColumnWithHSTemplate.cs" />
+    <Compile Include="PDFCreator\ColumnWithoutHSTemplate.cs" />
+    <Compile Include="PDFCreator\MassActiveCertificateTemplate.cs" />
+    <Compile Include="PDFCreator\NidroCertificateTemplate.cs" />
+    <Compile Include="PDFCreator\OrientGlobalCertificateTemplate.cs" />
+    <Compile Include="PDFCreator\RowWithHSTemplate.cs" />
+    <Compile Include="PDFCreator\RowWithoutHSTemplate.cs" />
+    <Compile Include="PDFCreator\Signature.cs" />
+    <Compile Include="Reports\Datasets\ReportDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\CancelledCertificate.aspx.cs">
+      <DependentUpon>CancelledCertificate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\CancelledCertificate.aspx.designer.cs">
+      <DependentUpon>CancelledCertificate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\certdetails.aspx.cs">
+      <DependentUpon>certdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\certdetails.aspx.designer.cs">
+      <DependentUpon>certdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\CertifcateDownload.aspx.cs">
+      <DependentUpon>CertifcateDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\CertifcateDownload.aspx.designer.cs">
+      <DependentUpon>CertifcateDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\CertificateDetails.aspx.cs">
+      <DependentUpon>CertificateDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\CertificateDetails.aspx.designer.cs">
+      <DependentUpon>CertificateDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\CertificateRequest.aspx.cs">
+      <DependentUpon>CertificateRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\CertificateRequest.aspx.designer.cs">
+      <DependentUpon>CertificateRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\CertificateUpload.aspx.cs">
+      <DependentUpon>CertificateUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\CertificateUpload.aspx.designer.cs">
+      <DependentUpon>CertificateUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\CertuificateDuplication.aspx.cs">
+      <DependentUpon>CertuificateDuplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\CertuificateDuplication.aspx.designer.cs">
+      <DependentUpon>CertuificateDuplication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\CoStatus.aspx.cs">
+      <DependentUpon>CoStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\CoStatus.aspx.designer.cs">
+      <DependentUpon>CoStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\ECertificateRequests.aspx.cs">
+      <DependentUpon>ECertificateRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\ECertificateRequests.aspx.designer.cs">
+      <DependentUpon>ECertificateRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\EditCertificateRequest.aspx.cs">
+      <DependentUpon>EditCertificateRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\EditCertificateRequest.aspx.designer.cs">
+      <DependentUpon>EditCertificateRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\EditManualEntry.aspx.cs">
+      <DependentUpon>EditManualEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\EditManualEntry.aspx.designer.cs">
+      <DependentUpon>EditManualEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\IssueCertificasteDetails.aspx.cs">
+      <DependentUpon>IssueCertificasteDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\IssueCertificasteDetails.aspx.designer.cs">
+      <DependentUpon>IssueCertificasteDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\ManualCert.aspx.cs">
+      <DependentUpon>ManualCert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\ManualCert.aspx.designer.cs">
+      <DependentUpon>ManualCert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\ManualEntry.aspx.cs">
+      <DependentUpon>ManualEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\ManualEntry.aspx.designer.cs">
+      <DependentUpon>ManualEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\PdfView.aspx.cs">
+      <DependentUpon>PdfView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\PdfView.aspx.designer.cs">
+      <DependentUpon>PdfView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\PendingCertificateRequest.aspx.cs">
+      <DependentUpon>PendingCertificateRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\PendingCertificateRequest.aspx.designer.cs">
+      <DependentUpon>PendingCertificateRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\PendingCertificates.aspx.cs">
+      <DependentUpon>PendingCertificates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\PendingCertificates.aspx.designer.cs">
+      <DependentUpon>PendingCertificates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\UploadBCertificateRequests.aspx.cs">
+      <DependentUpon>UploadBCertificateRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\UploadBCertificateRequests.aspx.designer.cs">
+      <DependentUpon>UploadBCertificateRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contact\MessageList.aspx.cs">
+      <DependentUpon>MessageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Contact\MessageList.aspx.designer.cs">
+      <DependentUpon>MessageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\AdminEditCustomer.aspx.cs">
+      <DependentUpon>AdminEditCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\AdminEditCustomer.aspx.designer.cs">
+      <DependentUpon>AdminEditCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\AdminEditUser.aspx.cs">
+      <DependentUpon>AdminEditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\AdminEditUser.aspx.designer.cs">
+      <DependentUpon>AdminEditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\Approval.aspx.cs">
+      <DependentUpon>Approval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\Approval.aspx.designer.cs">
+      <DependentUpon>Approval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerEditList.aspx.cs">
+      <DependentUpon>CustomerEditList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerEditList.aspx.designer.cs">
+      <DependentUpon>CustomerEditList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerFinanceData.aspx.cs">
+      <DependentUpon>CustomerFinanceData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerFinanceData.aspx.designer.cs">
+      <DependentUpon>CustomerFinanceData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerRegistration.aspx.cs">
+      <DependentUpon>CustomerRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerRegistration.aspx.designer.cs">
+      <DependentUpon>CustomerRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerRequestDetails.aspx.cs">
+      <DependentUpon>CustomerRequestDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerRequestDetails.aspx.designer.cs">
+      <DependentUpon>CustomerRequestDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerTaxAssign.aspx.cs">
+      <DependentUpon>CustomerTaxAssign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerTaxAssign.aspx.designer.cs">
+      <DependentUpon>CustomerTaxAssign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\LetterUploadForm.aspx.cs">
+      <DependentUpon>LetterUploadForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\LetterUploadForm.aspx.designer.cs">
+      <DependentUpon>LetterUploadForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\SelectTemplate.aspx.cs">
+      <DependentUpon>SelectTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\SelectTemplate.aspx.designer.cs">
+      <DependentUpon>SelectTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\TaxRegistration.aspx.cs">
+      <DependentUpon>TaxRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\TaxRegistration.aspx.designer.cs">
+      <DependentUpon>TaxRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\ViewCustomerDetails.aspx.cs">
+      <DependentUpon>ViewCustomerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\ViewCustomerDetails.aspx.designer.cs">
+      <DependentUpon>ViewCustomerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\ViewUploadForm.aspx.cs">
+      <DependentUpon>ViewUploadForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\ViewUploadForm.aspx.designer.cs">
+      <DependentUpon>ViewUploadForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\EnterEmailAdress.aspx.cs">
+      <DependentUpon>EnterEmailAdress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\EnterEmailAdress.aspx.designer.cs">
+      <DependentUpon>EnterEmailAdress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\FileNotFound.aspx.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\FileNotFound.aspx.designer.cs">
+      <DependentUpon>FileNotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\TemplateDownload.aspx.cs">
+      <DependentUpon>TemplateDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\TemplateDownload.aspx.designer.cs">
+      <DependentUpon>TemplateDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\BillPrints.aspx.cs">
+      <DependentUpon>BillPrints.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Invoice\BillPrints.aspx.designer.cs">
+      <DependentUpon>BillPrints.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\InvoiceGenarator.aspx.cs">
+      <DependentUpon>InvoiceGenarator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Invoice\InvoiceGenarator.aspx.designer.cs">
+      <DependentUpon>InvoiceGenarator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\InvoiceReportDetail.aspx.cs">
+      <DependentUpon>InvoiceReportDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Invoice\InvoiceReportDetail.aspx.designer.cs">
+      <DependentUpon>InvoiceReportDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\MonthlyAllInvoice.aspx.cs">
+      <DependentUpon>MonthlyAllInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Invoice\MonthlyAllInvoice.aspx.designer.cs">
+      <DependentUpon>MonthlyAllInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\MonthlyInvoiceBill.aspx.cs">
+      <DependentUpon>MonthlyInvoiceBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Invoice\MonthlyInvoiceBill.aspx.designer.cs">
+      <DependentUpon>MonthlyInvoiceBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\MonthlyInvoiceReport.aspx.cs">
+      <DependentUpon>MonthlyInvoiceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Invoice\MonthlyInvoiceReport.aspx.designer.cs">
+      <DependentUpon>MonthlyInvoiceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\CertificateReminders.aspx.cs">
+      <DependentUpon>CertificateReminders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\CertificateReminders.aspx.designer.cs">
+      <DependentUpon>CertificateReminders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Certificate\SetCertificate.aspx.cs">
+      <DependentUpon>SetCertificate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Certificate\SetCertificate.aspx.designer.cs">
+      <DependentUpon>SetCertificate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Forbidden.aspx.cs">
+      <DependentUpon>Forbidden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Forbidden.aspx.designer.cs">
+      <DependentUpon>Forbidden.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Maintenance\CertificateStatus.aspx.cs">
+      <DependentUpon>CertificateStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\CertificateStatus.aspx.designer.cs">
+      <DependentUpon>CertificateStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\Consignee.aspx.cs">
+      <DependentUpon>Consignee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\Consignee.aspx.designer.cs">
+      <DependentUpon>Consignee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\Consignor.aspx.cs">
+      <DependentUpon>Consignor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\Consignor.aspx.designer.cs">
+      <DependentUpon>Consignor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\CustomerRequestStatsusDetails.aspx.cs">
+      <DependentUpon>CustomerRequestStatsusDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\CustomerRequestStatsusDetails.aspx.designer.cs">
+      <DependentUpon>CustomerRequestStatsusDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\CustomerRequestStatus.aspx.cs">
+      <DependentUpon>CustomerRequestStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\CustomerRequestStatus.aspx.designer.cs">
+      <DependentUpon>CustomerRequestStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\EBCConfig.aspx.cs">
+      <DependentUpon>EBCConfig.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\EBCConfig.aspx.designer.cs">
+      <DependentUpon>EBCConfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\EditNCEContactPersonName.aspx.cs">
+      <DependentUpon>EditNCEContactPersonName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\EditNCEContactPersonName.aspx.designer.cs">
+      <DependentUpon>EditNCEContactPersonName.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\ExportSector.aspx.cs">
+      <DependentUpon>ExportSector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\ExportSector.aspx.designer.cs">
+      <DependentUpon>ExportSector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\OwnerDetailentry.aspx.cs">
+      <DependentUpon>OwnerDetailentry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\OwnerDetailentry.aspx.designer.cs">
+      <DependentUpon>OwnerDetailentry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\PackageType.aspx.cs">
+      <DependentUpon>PackageType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\PackageType.aspx.designer.cs">
+      <DependentUpon>PackageType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\RejectReasons.aspx.cs">
+      <DependentUpon>RejectReasons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\RejectReasons.aspx.designer.cs">
+      <DependentUpon>RejectReasons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\SignatureLevel.aspx.cs">
+      <DependentUpon>SignatureLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\SignatureLevel.aspx.designer.cs">
+      <DependentUpon>SignatureLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\SupportingDocumentDownload.aspx.cs">
+      <DependentUpon>SupportingDocumentDownload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\SupportingDocumentDownload.aspx.designer.cs">
+      <DependentUpon>SupportingDocumentDownload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\SupportingDocuments.aspx.cs">
+      <DependentUpon>SupportingDocuments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\SupportingDocuments.aspx.designer.cs">
+      <DependentUpon>SupportingDocuments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\SupportingDocumentSign.aspx.cs">
+      <DependentUpon>SupportingDocumentSign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\SupportingDocumentSign.aspx.designer.cs">
+      <DependentUpon>SupportingDocumentSign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\TemplateSupportingDocument.aspx.cs">
+      <DependentUpon>TemplateSupportingDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\TemplateSupportingDocument.aspx.designer.cs">
+      <DependentUpon>TemplateSupportingDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\UserEmailChange.aspx.cs">
+      <DependentUpon>UserEmailChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\UserEmailChange.aspx.designer.cs">
+      <DependentUpon>UserEmailChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Parameter\AdminEmailDetail.aspx.cs">
+      <DependentUpon>AdminEmailDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Parameter\AdminEmailDetail.aspx.designer.cs">
+      <DependentUpon>AdminEmailDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\CORegistryReport.aspx.cs">
+      <DependentUpon>CORegistryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\CORegistryReport.aspx.designer.cs">
+      <DependentUpon>CORegistryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\CoStatistic.aspx.cs">
+      <DependentUpon>CoStatistic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\CoStatistic.aspx.designer.cs">
+      <DependentUpon>CoStatistic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\CustomerStatementReport.aspx.cs">
+      <DependentUpon>CustomerStatementReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\CustomerStatementReport.aspx.designer.cs">
+      <DependentUpon>CustomerStatementReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\CustomTransacDetailRprt.aspx.cs">
+      <DependentUpon>CustomTransacDetailRprt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\CustomTransacDetailRprt.aspx.designer.cs">
+      <DependentUpon>CustomTransacDetailRprt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\SalesbyCustomer.aspx.cs">
+      <DependentUpon>SalesbyCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\SalesbyCustomer.aspx.designer.cs">
+      <DependentUpon>SalesbyCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\SalesByItemSummaryMNRprt.aspx.cs">
+      <DependentUpon>SalesByItemSummaryMNRprt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\SalesByItemSummaryMNRprt.aspx.designer.cs">
+      <DependentUpon>SalesByItemSummaryMNRprt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\Tax.aspx.cs">
+      <DependentUpon>Tax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\Tax.aspx.designer.cs">
+      <DependentUpon>Tax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\UnitChargeMaintenance.aspx.cs">
+      <DependentUpon>UnitChargeMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\UnitChargeMaintenance.aspx.designer.cs">
+      <DependentUpon>UnitChargeMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\UploadTemplate.aspx.cs">
+      <DependentUpon>UploadTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\UploadTemplate.aspx.designer.cs">
+      <DependentUpon>UploadTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Maintenance\UserEmail.aspx.cs">
+      <DependentUpon>UserEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Maintenance\UserEmail.aspx.designer.cs">
+      <DependentUpon>UserEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\WeeklySummaryRprt.aspx.cs">
+      <DependentUpon>WeeklySummaryRprt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Report\WeeklySummaryRprt.aspx.designer.cs">
+      <DependentUpon>WeeklySummaryRprt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupportingDoc\PdfView.aspx.cs">
+      <DependentUpon>PdfView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SupportingDoc\PdfView.aspx.designer.cs">
+      <DependentUpon>PdfView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupportingDoc\SDApproval.aspx.cs">
+      <DependentUpon>SDApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SupportingDoc\SDApproval.aspx.designer.cs">
+      <DependentUpon>SDApproval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupportingDoc\SDocApproveRequest.aspx.cs">
+      <DependentUpon>SDocApproveRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SupportingDoc\SDocApproveRequest.aspx.designer.cs">
+      <DependentUpon>SDocApproveRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\EditCUser.aspx.cs">
+      <DependentUpon>EditCUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\EditCUser.aspx.designer.cs">
+      <DependentUpon>EditCUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\PasswordChangeemail.aspx.cs">
+      <DependentUpon>PasswordChangeemail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\PasswordChangeemail.aspx.designer.cs">
+      <DependentUpon>PasswordChangeemail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\ProfileChange.aspx.cs">
+      <DependentUpon>ProfileChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\ProfileChange.aspx.designer.cs">
+      <DependentUpon>ProfileChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\SignatureUpload.aspx.cs">
+      <DependentUpon>SignatureUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\SignatureUpload.aspx.designer.cs">
+      <DependentUpon>SignatureUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\UserCategory.aspx.cs">
+      <DependentUpon>UserCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\UserCategory.aspx.designer.cs">
+      <DependentUpon>UserCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\UserGroup.aspx.cs">
+      <DependentUpon>UserGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\UserGroup.aspx.designer.cs">
+      <DependentUpon>UserGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\UserRequest.aspx.cs">
+      <DependentUpon>UserRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\UserRequest.aspx.designer.cs">
+      <DependentUpon>UserRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\UserRequestApproval.aspx.cs">
+      <DependentUpon>UserRequestApproval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\UserRequestApproval.aspx.designer.cs">
+      <DependentUpon>UserRequestApproval.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ajax\AjaxControlToolkit.dll.refresh" />
+    <Content Include="Signature\Samitha\Samitha.pfx" />
+    <Content Include="fonts\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\less\animated.less" />
+    <Content Include="fonts\less\bordered-pulled.less" />
+    <Content Include="fonts\less\core.less" />
+    <Content Include="fonts\less\fixed-width.less" />
+    <Content Include="fonts\less\font-awesome.less" />
+    <Content Include="fonts\less\icons.less" />
+    <Content Include="fonts\less\larger.less" />
+    <Content Include="fonts\less\list.less" />
+    <Content Include="fonts\less\mixins.less" />
+    <Content Include="fonts\less\path.less" />
+    <Content Include="fonts\less\rotated-flipped.less" />
+    <Content Include="fonts\less\spinning.less" />
+    <Content Include="fonts\less\stacked.less" />
+    <Content Include="fonts\less\variables.less" />
+    <Content Include="fonts\scss\font-awesome.scss" />
+    <Content Include="fonts\scss\_animated.scss" />
+    <Content Include="fonts\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\scss\_core.scss" />
+    <Content Include="fonts\scss\_fixed-width.scss" />
+    <Content Include="fonts\scss\_icons.scss" />
+    <Content Include="fonts\scss\_larger.scss" />
+    <Content Include="fonts\scss\_list.scss" />
+    <Content Include="fonts\scss\_mixins.scss" />
+    <Content Include="fonts\scss\_path.scss" />
+    <Content Include="fonts\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\scss\_spinning.scss" />
+    <Content Include="fonts\scss\_stacked.scss" />
+    <Content Include="fonts\scss\_variables.scss" />
+    <Content Include="Templates\Column_without_HS_code_2.pdf" />
+    <Content Include="Templates\NCE_CO_Format_Column_with_HS_code _2.pdf" />
+    <Content Include="Templates\NCE_CO_Format_Column_with_HS_code.pdf" />
+    <Content Include="Templates\NCE_CO_Format_For_Nidro.pdf" />
+    <Content Include="Templates\NCE_Digital_CO_form_for_MASS_Active.pdf" />
+    <Content Include="Templates\NCE_Digital_CO_for_Orient_Global.pdf" />
+    <Content Include="Templates\row with HS .pdf" />
+    <Content Include="Templates\row without HS.pdf" />
+    <Content Include="img\Certificate11.psd" />
+    <Content Include="img\Customer11.psd" />
+    <Content Include="Reports\Datasets\ReportDS.xsc">
+      <DependentUpon>ReportDS.xsd</DependentUpon>
+    </Content>
+    <Content Include="Master.Master" />
+    <Content Include="packages.config" />
+    <None Include="Reports\Datasets\ReportDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Reports\Datasets\ReportDS.xss">
+      <DependentUpon>ReportDS.xsd</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Documents\" />
+    <Folder Include="Inbox\" />
+    <Folder Include="Uploads\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\CORegistryReport.rdlc" />
+    <EmbeddedResource Include="Reports\CustomerStatmentRprt.rdlc" />
+    <EmbeddedResource Include="Reports\CustomTransactionRprt.rdlc" />
+    <EmbeddedResource Include="Reports\SalesByCustomer.rdlc" />
+    <EmbeddedResource Include="Reports\SalesByItemSummaryMN.rdlc" />
+    <EmbeddedResource Include="Reports\WeeklySummaryRprt.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1826</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44856/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

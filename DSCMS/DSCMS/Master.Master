@@ -1,0 +1,715 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="DSCMS.Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>
+        <asp:ContentPlaceHolder ID="Title" runat="server"></asp:ContentPlaceHolder>
+    </title>
+
+
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/css/logo-nav.css" rel="stylesheet" />
+    <link href="~/css/notification.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <%--<link rel="stylesheet" href="~/css/datepicker.css" />--%>
+
+    <%--<link href="~/css/font-awesome.css" rel="stylesheet"/>--%>
+    <link href="fonts/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/select2.min.css" rel="stylesheet" />
+    <script src="../../js/jquery.js"></script>
+    <asp:ContentPlaceHolder ID="Header" runat="server"></asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            var a = '<%=FromServer %>';
+
+
+           var stack = [];
+
+           stack.push(a);
+           stack.push(a);
+
+
+
+           var servervalue = stack.pop();
+
+
+
+           // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
+           $('#noti_Counter')
+               .css({ opacity: 0 })
+               .text(servervalue)              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+               .css({ top: '-11px' })
+               .animate({ top: '-2px', opacity: 1 }, 500);
+
+           $('#noti_Button').click(function () {
+
+               // TOGGLE (SHOW OR HIDE) NOTIFICATION WINDOW.
+               $('#notifications1').fadeToggle('fast', 'linear', function () {
+                   if ($('#notifications1').is(':hidden')) {
+                       $('#noti_Button').css('background-color', '#FFE');
+                   }
+                   else $('#noti_Button').css('background-color', '#FFE');        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+               });
+
+               // $('#noti_Counter').fadeOut('slow');                 // HIDE THE COUNTER.
+
+               return false;
+           });
+
+           // HIDE NOTIFICATIONS WHEN CLICKED ANYWHERE ON THE PAGE.
+           $(document).click(function () {
+               $('#notifications1').hide();
+
+               // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
+               if ($('#noti_Counter').is(':hidden')) {
+                   // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                   $('#noti_Button').css('background-color', '#FFE');
+               }
+           });
+
+           //$('#notifications1').click(function () {
+           //    return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
+           //});
+       });
+
+       function redirect() {
+           location.href = 'https://forums.asp.net/t/1302692.aspx?Repeater+control+and+hyperlink';
+       }
+    </script>
+
+
+    <script>
+
+        function notifi() {
+            $(document).ready(function () {
+                var a = '<%=FromServer %>';
+
+
+                var stack = [];
+
+                stack.push(a);
+                stack.push(a);
+
+
+
+                var servervalue = stack.pop();
+
+
+
+                // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
+                $('#noti_Counter')
+                    .css({ opacity: 0 })
+                    .text(servervalue)              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+                    .css({ top: '-11px' })
+                    .animate({ top: '-2px', opacity: 1 }, 500);
+
+                $('#noti_Button').click(function () {
+
+                    // TOGGLE (SHOW OR HIDE) NOTIFICATION WINDOW.
+                    $('#notifications1').fadeToggle('fast', 'linear', function () {
+                        if ($('#notifications1').is(':hidden')) {
+                            $('#noti_Button').css('background-color', '#FFE');
+                        }
+                        else $('#noti_Button').css('background-color', '#FFE');        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                    });
+
+                    // $('#noti_Counter').fadeOut('slow');                 // HIDE THE COUNTER.
+
+                    return false;
+                });
+
+                // HIDE NOTIFICATIONS WHEN CLICKED ANYWHERE ON THE PAGE.
+                $(document).click(function () {
+                    $('#notifications1').hide();
+
+                    // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
+                    if ($('#noti_Counter').is(':hidden')) {
+                        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                        $('#noti_Button').css('background-color', '#FFE');
+                    }
+                });
+
+                //$('#notifications1').click(function () {
+                //    return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
+                //});
+            });
+
+        }
+
+        function redirect() {
+            location.href = 'https://forums.asp.net/t/1302692.aspx?Repeater+control+and+hyperlink';
+        }
+
+
+    </script>
+
+
+    <%--Navigation Bar Begins--%>
+    <%--    <script>
+        $(document).on('click', '.navbar-collapse.in', function (e) {
+            if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
+                $(this).collapse('hide');
+            }
+        });
+    </script>--%>
+    <nav class="navi-main navbar navbar-default navbar-fixed-top navbar-custom" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="../../img/nce_new_logo_icon.png" style="" width="50" height="50" alt="" />
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <%--Navigation Left Begins--%>
+            <ul class="nav navbar-nav" id="NavigationLeft" runat="server">
+                <li>
+
+                    <asp:HyperLink ID="linkHome" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+                </li>
+                <li>
+                    <asp:HyperLink ID="linkDashboard" runat="server" NavigateUrl="~/Views/Home/Dashboard.aspx">Dashboard</asp:HyperLink>
+                </li>
+
+
+
+                <%--Customer Navigation Begins--%>
+                <li class="dropdown" runat="server" id="listItemCustomer">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Customer <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <asp:HyperLink ID="HyperLink28" runat="server" NavigateUrl="~/Views/Customer/CustomerRegistration.aspx">Customer Registration</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink33" runat="server" NavigateUrl="~/Views/Customer/Approval.aspx">Customer Request Approval</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink35" runat="server" NavigateUrl="~/Views/Customer/CustomerTaxAssign.aspx">Edit Customer Rates & Tax</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink36" runat="server" NavigateUrl="~/Views/Customer/CustomerEditList.aspx">Edit/View Customer Details</asp:HyperLink></li>
+                        <%--<li>
+                            <asp:HyperLink ID="HyperLink42" runat="server" NavigateUrl="~/Views/Maintenance/CustomerRequestStatus.aspx">Customer Request Status</asp:HyperLink></li>--%>
+                    </ul>
+                </li>
+                <%--Customer Navigation Ends--%>
+                <li class="dropdown" runat="server" id="listItemCertificateCancel">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Certificate <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <asp:HyperLink ID="HyperLink41" runat="server" NavigateUrl="~/Views/Certificate/CertuificateDuplication.aspx">Document Cancellation List</asp:HyperLink></li>
+                    </ul>
+                </li>
+
+                <%--Certificate Navigation Begins--%>
+                <li class="dropdown" runat="server" id="listItemCertificate">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Certificate <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <%--<li>
+                            <asp:HyperLink ID="linkCertiRequest" runat="server" NavigateUrl="~/Views/Certificate/ManualEntry.aspx">Certificate Registry</asp:HyperLink></li>--%>
+                        <li>
+                            <asp:HyperLink ID="linkManualCert" runat="server" NavigateUrl="~/Views/Certificate/ManualCert.aspx">Offline Certificate Details</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/Views/Certificate/CertuificateDuplication.aspx">Document Cancellation List</asp:HyperLink></li>
+
+                    </ul>
+                </li>
+                <%--Certificate Navigation Ends--%>
+
+                <%--User Navigation Begins--%>
+                <li class="dropdown" runat="server" id="listItemUser">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">User<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <asp:HyperLink ID="linkAddUsr" runat="server" NavigateUrl="~/Views/User/AddUser.aspx">New User</asp:HyperLink></li>
+                        <%-- <li>
+                            <asp:HyperLink ID="linkUsrApproval" runat="server" NavigateUrl="~/Views/User/UserRequestApproval.aspx">User Request Approval</asp:HyperLink></li>--%>
+                        <li>
+                            <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/Views/User/EditUser.aspx">Edit User</asp:HyperLink></li>
+                    </ul>
+                </li>
+                <%--Certificate Navigation Ends--%>
+
+                <%--Approvals NCE ADMIN Navigation Begins--%>
+                <li class="dropdown" runat="server" id="listItemNCEAdminApproval">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pending Approval<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <asp:HyperLink ID="linkNCEcustRequst" runat="server" NavigateUrl="~/Views/Customer/Approval.aspx">Customer Requests</asp:HyperLink></li>
+                        <%--  <li>
+                            <asp:HyperLink ID="HyperLink45" runat="server" NavigateUrl="~/Views/User/UserRequestApproval.aspx">User Request Approval</asp:HyperLink></li>--%>
+                    </ul>
+                </li>
+                <%--Approvals NCE ADMIN Navigation Ends--%>
+
+                <%--Views NCE ADMIN Navigation Begins--%>
+                <li class="dropdown" runat="server" id="listItemNCEAdminViews">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">View<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <asp:HyperLink ID="linkNCECertDetailV" runat="server" NavigateUrl="~/Views/Report/CoStatistic.aspx">Approved Certificate Details</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink37" runat="server" NavigateUrl="~/Views/Report/Reports.aspx">Certificate Transaction History</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink47" runat="server" NavigateUrl="~/Views/Maintenance/CustomerRequestStatus.aspx">Certificate Request Status</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="linkNCECustDetailV" runat="server" NavigateUrl="~/Views/Contact/MessageList.aspx">Certificate Verification Message</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink39" runat="server" NavigateUrl="~/Views/Certificate/CancelledCertificate.aspx">Certificate Cancellation History</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink45" runat="server" NavigateUrl="~/Views/Customer/ViewUploadForm.aspx">Customer Registration Letter</asp:HyperLink></li>
+
+                    </ul>
+                </li>
+                <%--Views NCE ADMIN Navigation Ends--%>
+
+                <%--Downloads NCE ADMIN Navigation Begins--%>
+                <li class="dropdown" runat="server" id="listItemNCEAdminDownload">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Downloads<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <asp:HyperLink ID="linkNCECertDwnl" runat="server" NavigateUrl="~/Views/Certificate/CertifcateDownload.aspx">Approved Certificate Download</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="linkNCESDDwnl" runat="server" NavigateUrl="~/Views/Maintenance/SupportingDocumentDownload.aspx">Approved Supporting Document Download</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="linkNCETempDwn" runat="server" NavigateUrl="~/Views/Home/TemplateDownload.aspx">Template Download</asp:HyperLink></li>
+                    </ul>
+                </li>
+                <%--Downloads NCE ADMIN Navigation Ends--%>
+
+                <%--Maintenance NCE ADMIN Navigation Begins--%>
+                <li class="dropdown" runat="server" id="listNCEAdminMaintenance">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Maintenance<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <asp:HyperLink ID="HyperLink55" runat="server" NavigateUrl="~/Views/Maintenance/EditNCEContactPersonName.aspx">Certificate Verification Contact Person</asp:HyperLink></li>
+
+                        <%-- <li>
+                            <asp:HyperLink ID="HyperLink40" runat="server" NavigateUrl="~/Views/Certificate/ManualEntry.aspx">Certificate Details Manual Entry</asp:HyperLink></li>
+                        --%> <%--<li>
+                            <asp:HyperLink ID="HyperLink43" runat="server" NavigateUrl="~/Views/Maintenance/Consignee.aspx">Consignee</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink44" runat="server" NavigateUrl="~/Views/Maintenance/Consignor.aspx">Consignor</asp:HyperLink></li>--%>
+                        <%--<li>
+                            <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/Views/Maintenance/UserEmailChange.aspx">Customer Email Configuration</asp:HyperLink></li>--%>
+                        <%--                        <li>
+                            <asp:HyperLink ID="HyperLink41" runat="server" NavigateUrl="~/Views/Maintenance/EBCConfig.aspx">E-Based Certificate Mail Configuration</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Views/Maintenance/UserEmail.aspx">Email Based Certificate Signature Coordinates</asp:HyperLink></li>--%>
+                        <li>
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Views/Maintenance/PackageType.aspx">Package Types</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Views/Maintenance/RejectReasons.aspx">Reject Reasons</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Views/User/SignatureUpload.aspx">Signatory Signature Setup</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Views/Maintenance/TemplateSupportingDocument.aspx">Supporting Documents For Template</asp:HyperLink></li>
+                        <%--<li>
+                            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Views/Maintenance/SupportingDocumentSign.aspx">Supporting Documents Signature Coordinates</asp:HyperLink></li>--%>
+                        <li>
+                            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Views/Maintenance/SupportingDocuments.aspx">Supporting Documents</asp:HyperLink></li>
+
+                        <li>
+                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Views/Report/Tax.aspx">Tax</asp:HyperLink></li>
+
+                        <li>
+                            <asp:HyperLink ID="HyperLink40" runat="server" NavigateUrl="~/Views/Maintenance/OwnerDetailentry.aspx">OwnerDetails</asp:HyperLink></li>
+
+                        <li>
+                            <asp:HyperLink ID="HyperLink43" runat="server" NavigateUrl="~/Views/Maintenance/ExportSector.aspx">Export Sector</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink42" runat="server" NavigateUrl="~/Views/Maintenance/EBCConfig.aspx">Email Configuration</asp:HyperLink></li>
+
+
+
+
+
+
+
+                    </ul>
+                </li>
+
+
+
+                <%--Maintenance NCE ADMIN Navigation Ends--%>
+
+                <%-- ------------------------------------------------------------------------------------------------- --%>
+
+                <%--Approval Signatory Navigation Begins--%>
+                <li class="dropdown" runat="server" id="listItemSigApproval">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pending Approval<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Views/Certificate/PendingCertificates.aspx">Certificate Requests</asp:HyperLink></li>
+                        <%--<li>
+                            <asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/Views/Certificate/ECertificateRequests.aspx">Email Based Certificate Requests</asp:HyperLink></li>--%>
+                        <%--<li>
+                            <asp:HyperLink ID="HyperLink13" runat="server" NavigateUrl="~/Views/Certificate/UploadBCertificateRequests.aspx">Uploaded Certificate Requests</asp:HyperLink></li>--%>
+                        <li>
+                            <asp:HyperLink ID="HyperLink14" runat="server" NavigateUrl="~/Views/SupportingDoc/SDApproval.aspx">Supporting Document Request</asp:HyperLink></li>
+
+                    </ul>
+                </li>
+                <%--Approval Signatory Navigation Ends--%>
+
+
+                <%--Downloads Signatory Navigation Begins--%>
+                <li class="dropdown" runat="server" id="listItemSigDownload">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Download<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <asp:HyperLink ID="HyperLink15" runat="server" NavigateUrl="~/Views/Certificate/CertifcateDownload.aspx">Approved Certificate Download</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink16" runat="server" NavigateUrl="~/Views/Maintenance/SupportingDocumentDownload.aspx">Approved Supporting Document Download</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Views/Home/TemplateDownload.aspx">Template Download</asp:HyperLink></li>
+                    </ul>
+            </li>
+                <%--Approval Signatory Navigation Ends--%>
+
+            <%--Views Signatory Navigation Begins--%>
+            <li class="dropdown" runat="server" id="listItemSigViews">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">View<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <asp:HyperLink ID="HyperLink17" runat="server" NavigateUrl="~/Views/Report/Reports.aspx">Certificate Transaction History</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink46" runat="server" NavigateUrl="~/Views/Report/CoStatistic.aspx">Approved Certificates Details</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink18" runat="server" NavigateUrl="~/Views/Customer/CustomerEditList.aspx">Customer Details</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink48" runat="server" NavigateUrl="~/Views/Maintenance/CustomerRequestStatus.aspx">Certificate Request Status</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink56" runat="server" NavigateUrl="~/Views/Certificate/CancelledCertificate.aspx">Certificate Cancellation History </asp:HyperLink></li>
+
+                    <li>
+                        <asp:HyperLink ID="HyperLink60" runat="server" NavigateUrl="~/Views/Customer/ViewUploadForm.aspx">Customer Registration Letter</asp:HyperLink></li>
+                </ul>
+            </li>
+            <%--Approval Signatory Navigation Ends--%>
+
+            <%-- -------------------------------------------------------------------------------------------------- --%>
+
+            <%--Views Finance Admin Navigation Begins--%>
+            <li class="dropdown" runat="server" id="listItemFAdminViews">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">View<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <asp:HyperLink ID="HyperLink19" runat="server" NavigateUrl="~/Views/Report/Reports.aspx">Certificate Issuance Details</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink34" runat="server" NavigateUrl="~/Views/Report/CoStatistic.aspx">Approve Certificate Details</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink20" runat="server" NavigateUrl="~/Views/Customer/CustomerEditList.aspx">Customer Details</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink57" runat="server" NavigateUrl="~/Views/Certificate/CancelledCertificate.aspx">Certificate Cancellation History</asp:HyperLink></li>
+
+                </ul>
+            </li>
+            <%--Approval Finance Admin Navigation Ends--%>
+
+            <%--Views Finance Admin Navigation Begins--%>
+            <li class="dropdown" runat="server" id="listItemFAdminInvoiceing">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Invoicing<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <asp:HyperLink ID="HyperLink21" runat="server" NavigateUrl="~/Views/Invoice/MonthlyAllInvoice.aspx">Invoice</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink22" runat="server" NavigateUrl="~/Views/Invoice/MonthlyInvoiceReport.aspx">Invoice Detail Report</asp:HyperLink></li>
+                </ul>
+            </li>
+            <%--Approval Finance Admin Navigation Ends--%>
+
+            <%-- ----------------------------------------------------------------------------------------------- --%>
+
+            <%--Views Customer Admin Navigation Begins--%>
+            <li class="dropdown" runat="server" id="listItemCAdminViews">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">View<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <asp:HyperLink ID="HyperLink23" runat="server" NavigateUrl="~/Views/Maintenance/CustomerRequestStatus.aspx">Certificate Request Status</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink24" runat="server" NavigateUrl="~/Views/Customer/ViewCustomerDetails.aspx">Customer Details</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink38" runat="server" NavigateUrl="~/Views/Certificate/PendingCertificateRequest.aspx">Pending for Approval</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink25" runat="server" NavigateUrl="~/Views/Report/CoStatistic.aspx">Approved Certificate Detail</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Views/Report/CustomerStatementReport.aspx">Statement Report</asp:HyperLink></li>
+
+                </ul>
+            </li>
+            <%--Views Customer Admin Navigation Ends--%>
+
+            <%--Request Customer Admin Navigation Begins--%>
+            <li class="dropdown" runat="server" id="listItemCAdminRequest">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Request<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Certificate Request</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <asp:HyperLink ID="HyperLink26" runat="server" NavigateUrl="~/Views/Certificate/CertificateRequest.aspx"> Certificate Request</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink29" runat="server" NavigateUrl="~/Views/Certificate/CertificateUpload.aspx">Upload Based Certificates</asp:HyperLink></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink27" runat="server" NavigateUrl="~/Views/SupportingDoc/SDocApproveRequest.aspx">Supporting Document Request</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="linkCAdminUsrRequest" runat="server" NavigateUrl="~/Views/User/UserRequest.aspx">New User Request</asp:HyperLink></li>
+                </ul>
+            </li>
+            <%--Request Customer Admin Navigation Ends--%>
+
+
+            <%--Downloads Customer Admin Navigation Begins--%>
+            <li class="dropdown" runat="server" id="listItemCAdminDownload">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Download<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <asp:HyperLink ID="HyperLink30" runat="server" NavigateUrl="~/Views/Home/TemplateDownload.aspx">Template Download</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink31" runat="server" NavigateUrl="~/Views/Certificate/CertifcateDownload.aspx">Approved Certificate Download</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink32" runat="server" NavigateUrl="~/Views/Maintenance/SupportingDocumentDownload.aspx">Approved Supporting Document Download</asp:HyperLink></li>
+                </ul>
+            </li>
+            <%--Downloads Customer N CAdmin Navigation Ends--%>
+
+            <%--Edit Customer Admin Navigation Begins--%>
+            <li class="dropdown" runat="server" id="listItemCAdminEdit">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edit<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <asp:HyperLink ID="HyperLink58" runat="server" NavigateUrl="~/Views/Customer/AdminEditCustomer.aspx">Edit Customer</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink59" runat="server" NavigateUrl="~/Views/Customer/LetterUploadForm.aspx">Business Registration/Request Letter</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink44" runat="server" NavigateUrl="~/Views/User/EditCUser.aspx">Edit User</asp:HyperLink></li>
+
+
+                </ul>
+            </li>
+            <%--Edit Customer N CAdmin Navigation Ends--%>
+
+
+            <%-- reports--%>
+            <li class="dropdown" runat="server" id="lisReportsViwer">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <asp:HyperLink ID="linkCORegistryRprt" runat="server" NavigateUrl="~/Views/Report/CORegistryReport.aspx">CO Registry</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="linkCustSRprt" runat="server" NavigateUrl="~/Views/Report/CustomerStatementReport.aspx">Customer Statement</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="linkCusTranDRprt" runat="server" NavigateUrl="~/Views/Report/CustomTransacDetailRprt.aspx">Customer Transaction Details</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="linkSaleBCRprt" runat="server" NavigateUrl="~/Views/Report/SalesbyCustomer.aspx">Sales By Customer</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="linkSalesBItemRprt" runat="server" NavigateUrl="~/Views/Report/SalesByItemSummaryMNRprt.aspx">Sales By Item Summary M or N/m</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink49" runat="server" NavigateUrl="~/Views/Report/WeeklySummaryRprt.aspx">Weekly Summary</asp:HyperLink></li>
+                </ul>
+            </li>
+            <%--Report end--%>
+
+            <%-- ----------------------------------------------------------------------------------------------- --%>
+
+            <%-- ----------------------------------------------------------------------------------------------- --%>
+            </ul>
+            <%--Navigation Left Ends--%>
+            <ul class="nav navbar-nav navbar-right" id="UserSeesionD" runat="server">
+
+                <li id="noti_Container">
+                    <div id="noti_Counter" runat="server"></div>
+                    <!--SHOW NOTIFICATIONS COUNT.-->
+
+                    <!--A CIRCLE LIKE BUTTON TO DISPLAY NOTIFICATION DROPDOWN.-->
+                    <div id="noti_Button" runat="server"></div>
+
+                    <!--THE NOTIFICAIONS DROPDOWN BOX.-->
+                    <div id="notifications1" style="z-index: 999999" runat="server">
+                        <div class="container">
+                            <h3 style="color: darkblue">Notifications</h3>
+
+
+                            <div style="height: 300px;">
+                                <asp:Literal ID="ltrInfo" Visible="false" runat="server"></asp:Literal>
+                                <br />
+                                <asp:HyperLink ID="HyperLink50" runat="server" Visible="false" Font-Size="Medium" Target="_blank">Dashboards</asp:HyperLink>
+                                <br />
+                                <br />
+                                <asp:HyperLink ID="HyperLink51" runat="server" Visible="false" Font-Size="Medium" Target="_blank">Dashboards</asp:HyperLink><br />
+                                <br />
+                                <asp:HyperLink ID="HyperLink52" runat="server" Visible="false" Font-Size="Medium" Target="_blank">Dashboards</asp:HyperLink><br />
+                                <br />
+                                <asp:HyperLink ID="HyperLink53" runat="server" Visible="false" Font-Size="Medium" Target="_blank">Dashboards</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink54" runat="server" Visible="false" Font-Size="Medium" Target="_blank">Dashboards</asp:HyperLink>
+                                <%--   <br /><br /><br /> <asp:HyperLink ID="HyperLink49" BackColor="Yellow" Font-Size="Medium" runat="server" NavigateUrl="https://forums.asp.net/t/1302692.aspx?Repeater+control+and+hyperlink">Customerxz Registration</asp:HyperLink>--%>
+                                <br />
+                                <br />
+                                <asp:Repeater ID="rep" runat="server">
+
+                                    <%--HEADER OF THE REPEATER--%>
+                                    <HeaderTemplate>
+                                        <table border="0" width="200px">
+                                    </HeaderTemplate>
+
+                                    <%--SHOWING ITEMS--%>
+                                    <ItemTemplate>
+                                        <tr>
+                                            <td style="padding: 2px; border: solid 1px #CCC;">
+
+
+
+
+                                                <asp:Label ID="Label1" Text='<%# Container.DataItem.ToString() %>'
+                                                    runat="server"></asp:Label>
+                                            </td>
+                                        </tr>
+                                    </ItemTemplate>
+
+                                    <%--ALTERNATE TEMPLATE (SHOWING ITEMS IN DIFFERENT COLOR--%>
+                                    <AlternatingItemTemplate>
+                                        <tr>
+                                            <td style="padding: 2px; border: solid 1px #CCC; background: #EAF7FB; width: 200px;">
+
+                                                <asp:Label ID="Label2" Text='<%# Container.DataItem.ToString() %>'
+                                                    runat="server"></asp:Label>
+
+                                            </td>
+                                        </tr>
+                                    </AlternatingItemTemplate>
+
+                                    <%--REPEATER FOOTER--%>
+                                    <FooterTemplate>
+                                        </table>
+
+                        <div id="Div1" style="padding: 20px 0;" runat="server">
+
+                            <%--  <asp:Button ID="Button1" runat="server" Text="Button" onclientclick='redirect()' />--%>
+                            <asp:Label ID="lblFoot" runat="server"></asp:Label>
+                        </div>
+                                    </FooterTemplate>
+                                </asp:Repeater>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <asp:HyperLink ID="linkCoStatus" runat="server" NavigateUrl="~/dcoauth">Certificate Verification</asp:HyperLink></li>
+                <li>
+                    <asp:HyperLink ID="linkRegister" runat="server" NavigateUrl="~/Views/Customer/CustomerRegistration.aspx">Customer Register</asp:HyperLink></li>
+                <li>
+                    <asp:HyperLink ID="linkLogin" runat="server" NavigateUrl="~/Views/Home/Login.aspx">Login</asp:HyperLink></li>
+
+
+
+
+                <li class="dropdown" runat="server" id="listItemProfile">
+                    <a href="#" class="dropdown-toggle" id="userName" runat="server" data-toggle="dropdown">Profile<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <%-- <li><asp:HyperLink ID="linkProfile" runat="server" NavigateUrl="~/Views/User/Profile.aspx">Profile</asp:HyperLink></li>--%>
+                        <li>
+                            <asp:HyperLink ID="linkChangeProfile" runat="server" NavigateUrl="~/Views/User/ProfileChange.aspx">Change Password</asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink ID="linkLogout" runat="server" NavigateUrl="~/Views/Home/Logout.aspx">Logout</asp:HyperLink></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+    <%--Navigation Bar Ends--%>
+
+    <!-- Page Content -->
+    <div class="container-fluid" style="min-height: 715px;">
+        <form id="form1" runat="server" enctype="multipart/form-data">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </div>
+
+
+    <%-- <div class="navbar navbar-default navbar-fixed-bottom" style="background: #fff;">
+        <div class="container-fulid">
+      <p class="navbar-text pull-left">© 2016 - All Rights Reserved
+           <a href="#" target="_blank" ></a>
+      </p>
+      
+      <a href="http://votreit.com/" class="pull-right">
+                <div class="col-md-3" style="padding-left:60px;">
+                     <img src="../../img/VIT_Logo.jpg" class="img-rounded" style="margin-top: 10px;" alt="Cinque Terre" width="60" height="30" />
+                    </div>    
+                <div class="col-md-9">
+                    <h4 style="font-size:13px; padding-top:10px;">
+                    Designed & Developed By Votre IT Pvt Ltd
+            	    </h4>
+                        </div></a>
+    </div>
+    </div>--%>
+
+    <footer class="footer" id="footer">
+        <div class="container-fulid">
+            <div class="col-md-4 allrights">
+                <p class="pull-left">
+                    © 2016 - All Rights Reserved
+           <a href="#" target="_blank"></a>
+                </p>
+            </div>
+            <div class="col-md-8">
+                <a href="http://votreit.com/" class="pull-right" target="_blank">
+                    <div class="col-sm-3 votreimg">
+                        <img src="../../img/VIT_Logo.jpg" class="img-rounded" alt="Cinque Terre" width="70" height="35" />
+                    </div>
+                    <div class="col-md-9">
+                        <p class="votreline">
+                            Designed & Developed By Votre IT Pvt Ltd
+                        </p>
+                    </div>
+
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <%--    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>--%>
+
+
+
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/tablesearch.js"></script>
+    <script src="../../js/select2.full.js"></script>
+
+</body>
+
+</html>
+
