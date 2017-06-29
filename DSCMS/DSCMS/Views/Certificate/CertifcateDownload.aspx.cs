@@ -1096,10 +1096,10 @@ namespace DSCMS.Views.Certificate
         {
 
            
-            SaveCheckedValues();
-            GridView1.AllowPaging = false;
-            BindGrid();
-            PopulateCheckedValues();
+         //   SaveCheckedValues();
+         //   GridView1.AllowPaging = false;
+         //   BindGrid();
+         //   PopulateCheckedValues();
             Label lblTemp = null;
             Label lbldown = null;
            
@@ -1447,8 +1447,8 @@ namespace DSCMS.Views.Certificate
                 // MessageBox.Show(ex.ToString());  
                 System.Console.Error.Write(ex.Message);
                 //  return ex.Message;
-                GridView1.AllowPaging = true;
-                BindGrid();
+           //     GridView1.AllowPaging = true;
+           //     BindGrid();
 
 
 
@@ -1470,8 +1470,8 @@ namespace DSCMS.Views.Certificate
 
 
 
-            GridView1.AllowPaging = true;
-            BindGrid();
+           // GridView1.AllowPaging = true;
+           // BindGrid();
 
 
 
@@ -1534,10 +1534,10 @@ namespace DSCMS.Views.Certificate
 
 
 
-            SaveCheckedValues();
-            GridView1.AllowPaging = false;
-            BindGrid();
-            PopulateCheckedValues();
+            //SaveCheckedValues();
+            //GridView1.AllowPaging = false;
+            //BindGrid();
+            //PopulateCheckedValues();
             Label lblTemp = null;
             Label lbldown = null;
 
@@ -1718,8 +1718,8 @@ namespace DSCMS.Views.Certificate
                
 
 
-                GridView1.AllowPaging = true;
-                BindGrid();
+                //GridView1.AllowPaging = true;
+                //BindGrid();
 
              //   mp1.Show();
 
@@ -1808,10 +1808,10 @@ namespace DSCMS.Views.Certificate
 
 
 
-            SaveCheckedValues();
-            GridView1.AllowPaging = false;
-            BindGrid();
-            PopulateCheckedValues();
+            //SaveCheckedValues();
+            //GridView1.AllowPaging = false;
+            //BindGrid();
+            //PopulateCheckedValues();
             Label lblTemp = null;
             Label lbldown = null;
             var listOfStrings = new List<string>();
@@ -1982,7 +1982,7 @@ namespace DSCMS.Views.Certificate
                 //  Response.TransmitFile(Server.MapPath("~/Uploads/" + newString3 + ".pdf"));
                 // myIframe.Attributes["src"] = "~/Uploads/" + newString3 + ".pdf";
 
-                string finalviewDirectPath1 = "../../Uploads/Viewtemp/" + day+"/" + newString3 + ".pdf";
+                 string finalviewDirectPath1 = "../../Uploads/Viewtemp/" + day+"/" + newString3 + ".pdf";
 
 
                 Session["PDFUrl"] = finalviewDirectPath1;
@@ -1999,8 +1999,8 @@ namespace DSCMS.Views.Certificate
 
 
 
-                GridView1.AllowPaging = true;
-                BindGrid();
+             //   GridView1.AllowPaging = true;
+             //   BindGrid();
 
                 //   mp1.Show();
 

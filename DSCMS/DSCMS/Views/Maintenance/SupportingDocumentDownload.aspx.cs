@@ -553,10 +553,10 @@ namespace DSCMS.Views.Maintenance
           //  string[][] dws;
 
         //    Response.AppendHeader("Refresh", "2");
-            SaveCheckedValues();
-            GridView1.AllowPaging = false;
-            BindGrid();
-            PopulateCheckedValues();
+            //SaveCheckedValues();
+            //GridView1.AllowPaging = false;
+            //BindGrid();
+            //PopulateCheckedValues();
             Label lblTemp = null;
             Label lblReq = null;
             var listOfStrings = new List<string>();
@@ -743,10 +743,10 @@ namespace DSCMS.Views.Maintenance
             }
 
             //    Response.AppendHeader("Refresh", "2");
-            SaveCheckedValues();
-            GridView1.AllowPaging = false;
-            BindGrid();
-            PopulateCheckedValues();
+            //SaveCheckedValues();
+            //GridView1.AllowPaging = false;
+            //BindGrid();
+            //PopulateCheckedValues();
             Label lblTemp = null;
             Label lblReq = null;
             var listOfStrings = new List<string>();
@@ -838,15 +838,15 @@ namespace DSCMS.Views.Maintenance
                 //}
 
             }
-            GridView1.AllowPaging = false;
+          //  GridView1.AllowPaging = false;
             BindGrid();
             foreach (GridViewRow row in GridView1.Rows)
             {
                 CheckBox ChkBoxRows = (CheckBox)row.FindControl("CheckBox1");
                 ChkBoxRows.Checked = true;
             }
-            GridView1.AllowPaging = true;
-            BindGrid();
+     //       GridView1.AllowPaging = true;
+       //     BindGrid();
 
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "printTrigger()", true);
             //  Response.Redirect("SupportingDocumentDownload.aspx", false);
@@ -890,10 +890,10 @@ namespace DSCMS.Views.Maintenance
 
 
             //    Response.AppendHeader("Refresh", "2");
-            SaveCheckedValues();
-            GridView1.AllowPaging = false;
-            BindGrid();
-            PopulateCheckedValues();
+         //   SaveCheckedValues();
+         //   GridView1.AllowPaging = false;
+         //   BindGrid();
+         //   PopulateCheckedValues();
             Label lblTemp = null;
             Label lblReq = null;
             var listOfStrings = new List<string>();
@@ -981,15 +981,15 @@ namespace DSCMS.Views.Maintenance
                 //}
 
             }
-            GridView1.AllowPaging = false;
-            BindGrid();
-            foreach (GridViewRow row in GridView1.Rows)
-            {
-                CheckBox ChkBoxRows = (CheckBox)row.FindControl("CheckBox1");
-                ChkBoxRows.Checked = true;
-            }
-            GridView1.AllowPaging = true;
-            BindGrid();
+            //GridView1.AllowPaging = false;
+            //BindGrid();
+            //foreach (GridViewRow row in GridView1.Rows)
+            //{
+            //    CheckBox ChkBoxRows = (CheckBox)row.FindControl("CheckBox1");
+            //    ChkBoxRows.Checked = true;
+            //}
+            //GridView1.AllowPaging = true;
+            //BindGrid();
             //  Response.Redirect("SupportingDocumentDownload.aspx", false);
 
 

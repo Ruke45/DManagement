@@ -349,7 +349,24 @@ namespace DSCMS
             try
             {
 
-               
+                Label lblTempwebr  = null;
+
+                using (GridViewRow row = (GridViewRow)((LinkButton)sender).Parent.Parent)
+                {
+
+                    lblTempwebr = (Label)row.FindControl("lblRequestID");
+
+
+
+                    //    lblTemp=
+
+                    //    myIframe.Attributes["src"] = lblTemp.Text;
+
+
+
+                }
+
+                string webreqid = lblTempwebr.Text;
                 String CustID;
                 string SendEmailAddress;
 
@@ -360,7 +377,7 @@ namespace DSCMS
                 CustomerDetails cd = cdm.getRequestDetails(CustID);
                 SendEmailAddress = cd.Email1;
 
-                String AdminMsg = "Certificate reminder from Customer Name:-" + cusName + " (" +CustID+ "). Reply via:- " + SendEmailAddress;
+                String AdminMsg = "Certificate reminder for Request Id:-" + webreqid + " from Customer Name:-" + cusName + " (" + CustID + "). Reply via:- " + SendEmailAddress;
                 string ClientEmailaddress = System.Configuration.ConfigurationManager.AppSettings["AdminEmailAddress"];
 
                 sendEmail(AdminMsg, ClientEmailaddress);
@@ -382,6 +399,71 @@ namespace DSCMS
                // Response.Redirect("PendingCertificateRequest.aspx", false);
 
             }catch(Exception ex){
+
+                ErrorLog.LogError(ex);
+            }
+
+
+        }
+
+
+        protected void btnSupdocSend_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Label lblTempwebr = null;
+
+                using (GridViewRow row = (GridViewRow)((LinkButton)sender).Parent.Parent)
+                {
+
+                    lblTempwebr = (Label)row.FindControl("lblRequestSDID");
+
+
+
+                    //    lblTemp=
+
+                    //    myIframe.Attributes["src"] = lblTemp.Text;
+
+
+
+                }
+
+                string webreqid = lblTempwebr.Text;
+                String CustID;
+                string SendEmailAddress;
+
+                CustID = userSession.Customer_ID;
+
+                string cusName = od.getCutomerName(CustID);
+
+                CustomerDetails cd = cdm.getRequestDetails(CustID);
+                SendEmailAddress = cd.Email1;
+
+                String AdminMsg = " Certificate reminder for Document Request Id:-" + webreqid + " from Customer Name:-" + cusName + " (" + CustID + "). Reply via:- " + SendEmailAddress;
+                string ClientEmailaddress = System.Configuration.ConfigurationManager.AppSettings["AdminEmailAddress"];
+
+                sendEmail(AdminMsg, ClientEmailaddress);
+
+
+
+                string qu = null;
+                qu += "<div class=\"alert alert-dismissable alert-success\">";
+                qu += " <a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a>";
+                qu += " <strong> Email sent Successfully !!!</strong></div>";
+                qu += "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>";
+
+                ErrorMessage.InnerHtml = qu;
+
+
+
+
+
+                // Response.Redirect("PendingCertificateRequest.aspx", false);
+
+            }
+            catch (Exception ex)
+            {
 
                 ErrorLog.LogError(ex);
             }
@@ -417,7 +499,7 @@ namespace DSCMS
             }
             try
             {
-                mail.SendEmail(SADMIN_Email, "Customer Request", AdminMsg, "");
+                mail.SendEmail(SADMIN_Email, "Certificate Request Reminder", AdminMsg, "");
                 //string HostName = System.Configuration.ConfigurationManager.AppSettings["EmailHost"];
                 //string Port = System.Configuration.ConfigurationManager.AppSettings["EmailPort"];
                 //MailMessage msg = new MailMessage();
@@ -502,16 +584,6 @@ namespace DSCMS
                 Label lblRequestID = (Label)row.FindControl("lblRequestID");
                 getSupportingDOCWEB(lblRequestID.Text);
                 Mpw1.Show();
-            }
-        }
-
-        protected void linbtnEdit_Click(object sender, EventArgs e)
-        {
-            using (GridViewRow row = (GridViewRow)((LinkButton)sender).Parent.Parent)
-            {
-                Label lblRequestID = (Label)row.FindControl("lblSRequestID");
-                CRmanager.DeleteSavedCertificate(lblRequestID.Text, userSession.User_Id);
-                this.getCertificatRequests();
             }
         }
     }

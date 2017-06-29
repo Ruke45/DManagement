@@ -54,17 +54,8 @@
                                OnPageIndexChanging="gvPendigCR_PageIndexChanging">
                         <Columns>
                             <asp:BoundField HeaderText="Request Id" DataField="RequestId" SortExpression="RequestId" />
-                            <%--<asp:BoundField HeaderText="Consignor" DataField="Consignor" SortExpression="Consignor" />--%>
-                            <asp:TemplateField HeaderText="Consignee" SortExpression="Consignor">
-                            <ItemTemplate>
-                                    <%# (Eval("Consignor").ToString()).Replace("\n", "<br />") %>
-                                </ItemTemplate>
-                           </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Consignee" SortExpression="Consignee">
-                            <ItemTemplate>
-                                    <%# (Eval("Consignee").ToString()).Replace("\n", "<br />") %>
-                                </ItemTemplate>
-                           </asp:TemplateField>
+                            <asp:BoundField HeaderText="Consignor" DataField="Consignor" SortExpression="Consignor" />
+                            <asp:BoundField HeaderText="Consignee" DataField="Consignee" SortExpression="Consignee" />
                             <asp:BoundField HeaderText="Request Date" DataField="RequestDate" SortExpression="RequestDate" />
                             <asp:BoundField HeaderText="Invoice No" DataField="InvoiceNo" SortExpression="InvoiceNo" />
                             <asp:BoundField HeaderText="Country" DataField="CountryName" SortExpression="CountryName" />
@@ -72,12 +63,11 @@
                             <asp:BoundField HeaderText="Total Quantity" DataField="TotalQuantity" SortExpression="TotalQuantity" />
                             <asp:ButtonField Text="Details" CommandName="Select" />
 
-                            <asp:TemplateField HeaderText = "">
+                            <%--<asp:TemplateField HeaderText = "">
                                    <ItemTemplate>
-                                       <asp:Label ID="lblSRequestID" runat="server" Text='<%# Eval("RequestID") %>' Visible="false" />
-                                       <asp:LinkButton ID="linbtnEdit" runat="server" OnClick="linbtnEdit_Click">Remove</asp:LinkButton>
+                                       <asp:LinkButton ID="linbtnEdit" runat="server" OnClick="linbtnEdit_Click">Edit</asp:LinkButton>
                                    </ItemTemplate>
-                                </asp:TemplateField>
+                                </asp:TemplateField>--%>
                         </Columns>
                         <EmptyDataTemplate>No Record Available</EmptyDataTemplate>
                         <PagerStyle CssClass="Gridpaging" HorizontalAlign="Right" />
@@ -113,17 +103,8 @@
                                OnPageIndexChanging="gvPendigWCR_PageIndexChanging">
                         <Columns>
                             <asp:BoundField HeaderText="Request Id" DataField="RequestId" SortExpression="RequestId" />
-                            <%--<asp:BoundField HeaderText="Consignor" DataField="Consignor" SortExpression="Consignor" />--%>
-                            <asp:TemplateField HeaderText="Consignee" SortExpression="Consignor">
-                            <ItemTemplate>
-                                    <%# (Eval("Consignor").ToString()).Replace("\n", "<br />") %>
-                                </ItemTemplate>
-                           </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Consignee" SortExpression="Consignee">
-                            <ItemTemplate>
-                                    <%# (Eval("Consignee").ToString()).Replace("\n", "<br />") %>
-                                </ItemTemplate>
-                           </asp:TemplateField>
+                            <asp:BoundField HeaderText="Consignor" DataField="Consignor" SortExpression="Consignor" />
+                            <asp:BoundField HeaderText="Consignee" DataField="Consignee" SortExpression="Consignee" />
                             <asp:BoundField HeaderText="Request Date" DataField="RequestDate" SortExpression="RequestDate" />
                             <asp:BoundField HeaderText="Invoice No" DataField="InvoiceNo" SortExpression="InvoiceNo" />
                             <asp:BoundField HeaderText="Country" DataField="CountryName" SortExpression="CountryName" />
@@ -299,7 +280,7 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField ControlStyle-Width="100px" >
                                         <ItemTemplate>
-                                             <asp:LinkButton ID="LinkButton1" runat="server"  width="100px" CssClass="btn btn-sm btn-default"  Onclick="btnSend_Click"  >Send Reminder </asp:LinkButton>
+                                             <asp:LinkButton ID="LinkButton1" runat="server"  width="100px" CssClass="btn btn-sm btn-default"  Onclick=" btnSupdocSend_Click"  >Send Reminder </asp:LinkButton>
                                             </ItemTemplate>
 
                                          </asp:TemplateField>
