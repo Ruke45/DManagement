@@ -35,6 +35,8 @@ namespace DSCMS
         static List<SupportingDocUpload> SupList = new List<SupportingDocUpload>();
 
         string SADMIN_Email = System.Configuration.ConfigurationManager.AppSettings["SAdminEmailAddress"];
+        string Pending_Email = System.Configuration.ConfigurationManager.AppSettings["requestEmailAddress1"];
+        string Pending_Email2 = System.Configuration.ConfigurationManager.AppSettings["requestEmailAddress2"];
         string Customer_GropID = System.Configuration.ConfigurationManager.AppSettings["UserGroupID_Customer"];
         string SAdmin_GropID = System.Configuration.ConfigurationManager.AppSettings["UserGroupID_SAdmin"];
         string UserGroupID_CustomerAdmin = System.Configuration.ConfigurationManager.AppSettings["UserGroupID_CustomerAdmin"];
@@ -499,7 +501,8 @@ namespace DSCMS
             }
             try
             {
-                mail.SendEmail(SADMIN_Email, "Certificate Request Reminder", AdminMsg, "");
+                mail.SendEmail(Pending_Email, "Certificate Request Reminder", AdminMsg, "");
+                mail.SendEmail(Pending_Email2, "Certificate Request Reminder", AdminMsg, "");
                 //string HostName = System.Configuration.ConfigurationManager.AppSettings["EmailHost"];
                 //string Port = System.Configuration.ConfigurationManager.AppSettings["EmailPort"];
                 //MailMessage msg = new MailMessage();

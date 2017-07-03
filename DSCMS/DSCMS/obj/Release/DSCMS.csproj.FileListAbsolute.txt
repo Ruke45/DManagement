@@ -123,7 +123,6 @@ C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\bin\AjaxControlToolkit.
 C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\bin\DCISDBManager.pdb
 C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\bin\DotNetZip.xml
 C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\bin\System.Web.Ajax.pdb
-C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\obj\Release\DSCMS.csprojResolveAssemblyReference.cache
 C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\obj\Release\RdlCompile.cache
 C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\obj\Release\RdlCompile.compiled
 C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\obj\Release\DSCMS.dll
