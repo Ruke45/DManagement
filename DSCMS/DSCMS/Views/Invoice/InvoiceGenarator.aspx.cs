@@ -28,6 +28,7 @@ namespace DSCMS.Views.Invoice
             string Start;
             string End;
             string Status;
+            
             string SupportingDocStatus;
             string CertificateRateId;
             string SupDocCertificateRateId;
@@ -36,6 +37,7 @@ namespace DSCMS.Views.Invoice
             string OtherRateId;
             string SupDocOtherRateId;
             string SupsDocInvoiceRateId;
+            string AttachSheetId = "SDID5";
             CertificateManager CM;
             decimal Rate;
             decimal GrossTotal;
@@ -50,7 +52,7 @@ namespace DSCMS.Views.Invoice
                 SetValueToInvoiceTable(CustomerId, Start, End, Status, CertificateRateId, rm, InvoicesaveManager, invoice, invoiceNo);
 
 
-                Rate = SetValuetoInvoiceTateTable(CustomerId, Start, End, SupportingDocStatus, SupDocCertificateRateId, InvoiceRateId, OtherRateId, SupDocOtherRateId, SupsDocInvoiceRateId, CM, Rate, invoiceNo);
+                Rate = SetValuetoInvoiceTateTable(CustomerId, Start, End, SupportingDocStatus, SupDocCertificateRateId, InvoiceRateId, OtherRateId, SupDocOtherRateId, SupsDocInvoiceRateId, CM, Rate, invoiceNo, AttachSheetId);
                 GrossTotal = SetValuetoInvoiceTaxtable(CustomerId, GrossTotal, tax, invoiceNo);
                 Response.Redirect("BillPrints.aspx?InvNo=" + invoiceNo + "&Invoice=1&Start=" + StartDate + "&End=" + EndDate, false);
             }
@@ -112,10 +114,10 @@ namespace DSCMS.Views.Invoice
             return GrossTotal;
         }
 
-        private decimal SetValuetoInvoiceTateTable(string CustomerId, string Start, string End, string SupportingDocStatus, string SupDocCertificateRateId, string InvoiceRateId, string OtherRateId, string SupDocOtherRateId, string SupsDocInvoiceRateId, CertificateManager CM, decimal Rate, string invoiceNo)
+        private decimal SetValuetoInvoiceTateTable(string CustomerId, string Start, string End, string SupportingDocStatus, string SupDocCertificateRateId, string InvoiceRateId, string OtherRateId, string SupDocOtherRateId, string SupsDocInvoiceRateId, CertificateManager CM, decimal Rate, string invoiceNo, string AttachSheetId )
         {
             /*start to set Invoice rate Table*/
-            foreach (var supporting in CM.getSuuportingDocumentApproval(CustomerId, SupportingDocStatus, Start, End, InvoiceRateId, OtherRateId, SupsDocInvoiceRateId, SupDocOtherRateId))
+            foreach (var supporting in CM.getSuuportingDocumentApproval(CustomerId, SupportingDocStatus, Start, End, InvoiceRateId, OtherRateId, SupsDocInvoiceRateId, SupDocOtherRateId, AttachSheetId))
             {
                 string RateId = supporting.RateId1;
                 string SuportingId = supporting.SuportingDocId1;
@@ -203,11 +205,11 @@ namespace DSCMS.Views.Invoice
             OtherRateId = System.Configuration.ConfigurationManager.AppSettings["OtherRateId"];//get Other Rate Id
             SupDocOtherRateId = System.Configuration.ConfigurationManager.AppSettings["SupdocOtherRateId"];//get Supprting Document Id for Other Rate
             SupsDocInvoiceRateId = System.Configuration.ConfigurationManager.AppSettings["SupdocInvoiceRateId"];//get Supporting Document id For Invoice Rate
-
+            string AttachSheetId = "SDID5";
             CM = new CertificateManager();
             Rate = 0;
             decimal RateValue = 0;
-            foreach (var supporting in CM.getSuuportingDocumentApproval(CustomerId, SupportingDocStatus, Start, End, InvoiceRateId, OtherRateId, SupsDocInvoiceRateId, SupDocOtherRateId))
+            foreach (var supporting in CM.getSuuportingDocumentApproval(CustomerId, SupportingDocStatus, Start, End, InvoiceRateId, OtherRateId, SupsDocInvoiceRateId, SupDocOtherRateId, AttachSheetId))
             {
                 Rate = supporting.Rate1;
                 RateValue = RateValue + Rate;

@@ -127,3 +127,4 @@ C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\obj\Release\RdlCompile.
 C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\obj\Release\RdlCompile.compiled
 C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\obj\Release\DSCMS.dll
 C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\obj\Release\DSCMS.pdb
+C:\Users\USERPC\Documents\GitHub\DManagement\DSCMS\DSCMS\obj\Release\DSCMS.csprojResolveAssemblyReference.cache
