@@ -54,8 +54,16 @@
                                OnPageIndexChanging="gvPendigCR_PageIndexChanging">
                         <Columns>
                             <asp:BoundField HeaderText="Request Id" DataField="RequestId" SortExpression="RequestId" />
-                            <asp:BoundField HeaderText="Consignor" DataField="Consignor" SortExpression="Consignor" />
-                            <asp:BoundField HeaderText="Consignee" DataField="Consignee" SortExpression="Consignee" />
+                            <asp:TemplateField HeaderText="Consignee" SortExpression="Consignor">
+                            <ItemTemplate>
+                                    <%# (Eval("Consignor").ToString()).Replace("\n", "<br />") %>
+                                </ItemTemplate>
+                           </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Consignee" SortExpression="Consignee">
+                            <ItemTemplate>
+                                    <%# (Eval("Consignee").ToString()).Replace("\n", "<br />") %>
+                                </ItemTemplate>
+                           </asp:TemplateField>
                             <asp:BoundField HeaderText="Request Date" DataField="RequestDate" SortExpression="RequestDate" />
                             <asp:BoundField HeaderText="Invoice No" DataField="InvoiceNo" SortExpression="InvoiceNo" />
                             <asp:BoundField HeaderText="Country" DataField="CountryName" SortExpression="CountryName" />
@@ -103,8 +111,16 @@
                                OnPageIndexChanging="gvPendigWCR_PageIndexChanging">
                         <Columns>
                             <asp:BoundField HeaderText="Request Id" DataField="RequestId" SortExpression="RequestId" />
-                            <asp:BoundField HeaderText="Consignor" DataField="Consignor" SortExpression="Consignor" />
-                            <asp:BoundField HeaderText="Consignee" DataField="Consignee" SortExpression="Consignee" />
+                            <asp:TemplateField HeaderText="Consignee" SortExpression="Consignor">
+                            <ItemTemplate>
+                                    <%# (Eval("Consignor").ToString()).Replace("\n", "<br />") %>
+                                </ItemTemplate>
+                           </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Consignee" SortExpression="Consignee">
+                            <ItemTemplate>
+                                    <%# (Eval("Consignee").ToString()).Replace("\n", "<br />") %>
+                                </ItemTemplate>
+                           </asp:TemplateField>
                             <asp:BoundField HeaderText="Request Date" DataField="RequestDate" SortExpression="RequestDate" />
                             <asp:BoundField HeaderText="Invoice No" DataField="InvoiceNo" SortExpression="InvoiceNo" />
                             <asp:BoundField HeaderText="Country" DataField="CountryName" SortExpression="CountryName" />
