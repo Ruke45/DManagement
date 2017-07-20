@@ -311,15 +311,22 @@ namespace DSCMS
                     {
                         if (SupList[i].Seq_No == Convert.ToInt64(row.Cells[0].Text))
                         {
-                            Response.ContentType = "APPLICATION/OCTET-STREAM";
-                            String Header = "Attachment; Filename=" + SupList[i].Document_Name;
-                            Response.AppendHeader("Content-Disposition", Header);
-                            System.IO.FileInfo Dfile = new System.IO.FileInfo(Server.MapPath(SupList[i].Uploaded_Path));
-                            Response.WriteFile(Dfile.FullName);
-                            //Don't forget to add the following line
-                            HttpContext.Current.Response.Flush(); // Sends all currently buffered output to the client.
-                            HttpContext.Current.Response.SuppressContent = true;  // Gets or sets a value indicating whether to send HTTP content to the client.
-                            HttpContext.Current.ApplicationInstance.CompleteRequest();
+                            //Response.ContentType = "APPLICATION/OCTET-STREAM";
+                            //String Header = "Attachment; Filename=" + SupList[i].Document_Name;
+                            //Response.AppendHeader("Content-Disposition", Header);
+                            //System.IO.FileInfo Dfile = new System.IO.FileInfo(Server.MapPath(SupList[i].Uploaded_Path));
+                            //Response.WriteFile(Dfile.FullName);
+                            ////Don't forget to add the following line
+                            //HttpContext.Current.Response.Flush(); // Sends all currently buffered output to the client.
+                            //HttpContext.Current.Response.SuppressContent = true;  // Gets or sets a value indicating whether to send HTTP content to the client.
+                            //HttpContext.Current.ApplicationInstance.CompleteRequest();
+                                    Label lblPath = (Label)row.FindControl("lblUploadPath");
+                                    Label lblRequestID = (Label)row.FindControl("lblRequestID");
+                                    Session["PDFUrl"] = SupList[i].Uploaded_Path;
+                                    string pageurl = "PdfView.aspx?ID=" + SupList[i].Seq_No + "&DN=" + SupList[i].SupportingDoc_Name + ".pdf";
+                                    // Response.Write("<script> window.open('" + pageurl + "','_blank'); </script>");
+                                    Page.ClientScript.RegisterStartupScript(
+                                    this.GetType(), "OpenWindow", "window.open('" + pageurl + "','_blank');", true);
                         }
                     }
                 }

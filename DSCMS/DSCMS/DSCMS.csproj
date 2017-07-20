@@ -145,7 +145,6 @@
     <Content Include="Views\Certificate\PdfView.aspx" />
     <Content Include="Views\Certificate\PendingCertificateRequest.aspx" />
     <Content Include="Views\Certificate\PendingCertificates.aspx" />
-    <Content Include="Views\Certificate\UploadBCertificateRequests.aspx" />
     <Content Include="Views\Contact\MessageList.aspx" />
     <Content Include="Views\Customer\AdminEditCustomer.aspx" />
     <Content Include="Views\Customer\AdminEditUser.aspx" />
@@ -392,13 +391,6 @@
     </Compile>
     <Compile Include="Views\Certificate\PendingCertificates.aspx.designer.cs">
       <DependentUpon>PendingCertificates.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Certificate\UploadBCertificateRequests.aspx.cs">
-      <DependentUpon>UploadBCertificateRequests.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Certificate\UploadBCertificateRequests.aspx.designer.cs">
-      <DependentUpon>UploadBCertificateRequests.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Contact\MessageList.aspx.cs">
       <DependentUpon>MessageList.aspx</DependentUpon>

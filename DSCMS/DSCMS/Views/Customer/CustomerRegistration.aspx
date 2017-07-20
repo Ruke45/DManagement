@@ -145,12 +145,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">City</label>
+                            <label class="control-label col-sm-2" for="email">Country</label>
                             <div class="col-sm-7">
                                 <asp:TextBox ID="Address3" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="col-sm-3">
-                                <asp:RequiredFieldValidator ID="rfAddress3" runat="server" ControlToValidate="Address3" ErrorMessage="City is Required." ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="rfAddress3" runat="server" ControlToValidate="Address3" ErrorMessage="Country is Required." ForeColor="Red"></asp:RequiredFieldValidator>
 
                             </div>
                         </div>

@@ -391,7 +391,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-3" for="email" style="color:#1768a3">Digital Authentication Required </label>
                         <div class="col-sm-4">
-                            <asp:CheckBox ID="chckSealRequired" runat="server" CssClass="mycheckBig" />
+                            <asp:CheckBox ID="chckSealRequired" runat="server" CssClass="mycheckBig"  Checked="true"/>
                         </div>
                     </div>
 

@@ -1,4 +1,4 @@
-﻿
+﻿    
 <%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="CustomerRequestDetails.aspx.cs" Inherits="DSCMS.CustomerRequestDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Title" runat="server">
@@ -14,12 +14,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-horizontal" role="form" style="font-family: Cambria;">
-
-
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="email">Reject Reason</label>
-
-
                                 <div class="col-sm-1">
                                     <asp:DropDownList ID="ddRejectReason" Width="400" Height="30" runat="server" AppendDataBoundItems="true">
                                         <asp:ListItem Text="--Select Reason--" Value="" />
